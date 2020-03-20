@@ -38,7 +38,9 @@ try{
                 headers = {'Authorization': req.header('Authorization')};
             }
             // url: targetURL, + req.url
-            //console.log(targetURL);
+            console.log(targetURL);
+            console.log(headers);
+            console.log(req.body);
             request({ 
                 url: targetURL, 
                 method: req.method, 
