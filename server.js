@@ -37,6 +37,9 @@ try{
             if ( req.header('Authorization')) {
                 headers = {'Authorization': req.header('Authorization')};
             }
+            if ( req.header('X-AUTH-TOKEN')) {
+                headers = {'X-AUTH-TOKEN': req.header('X-AUTH-TOKEN')};
+            }
             // url: targetURL, + req.url
             console.log(targetURL);
             console.log(headers);
