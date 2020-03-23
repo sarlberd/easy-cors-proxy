@@ -41,6 +41,7 @@ try{
                 response.setHeader('X-AUTH-TOKEN', req.header('X-AUTH-TOKEN'));
             }
             // url: targetURL, + req.url
+            console.log(req.header('X-AUTH-TOKEN'));
             console.log(targetURL);
             console.log(headers);
             console.log(req.body);
