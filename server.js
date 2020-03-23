@@ -35,15 +35,12 @@ try{
             // process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
             var headers = {};
             if ( req.header('Authorization')) {
-                headers = {'Authorization': req.header('Authorization')};
+                response.setHeader('Authorization', req.header('Authorization'));
             }
             if ( req.header('X-AUTH-TOKEN')) {
-                headers = {'X-AUTH-TOKEN': req.header('X-AUTH-TOKEN')};
+                response.setHeader('X-AUTH-TOKEN', req.header('X-AUTH-TOKEN'));
             }
             // url: targetURL, + req.url
-            console.log("--------Headers--------");
-            console.log(req.header);
-            console.log("--------------");
             console.log(targetURL);
             console.log(headers);
             console.log(req.body);
@@ -51,7 +48,7 @@ try{
                 url: targetURL, 
                 method: req.method, 
                 json: req.body, 
-                headers: headers,
+                headers: req.header,
                 strictSSL: false },
                 function (error, response, body) {
                     console.log(error);
