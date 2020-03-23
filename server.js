@@ -35,10 +35,10 @@ try{
             // process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
             var headers = {};
             if ( req.header('Authorization')) {
-                req.setHeader('Authorization', req.header('Authorization'));
+                headers = {'Authorization':req.header('Authorization')};
             }
             if ( req.header('X-AUTH-TOKEN')) {
-                req.setHeader('X-AUTH-TOKEN', req.header('X-AUTH-TOKEN'));
+                headers = {'X-AUTH-TOKEN':req.header('X-AUTH-TOKEN')};
             }
             // url: targetURL, + req.url
             console.log(req.header('X-AUTH-TOKEN'));
